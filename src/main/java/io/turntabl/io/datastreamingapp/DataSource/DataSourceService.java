@@ -45,8 +45,8 @@ public class DataSourceService {
 //            SparkContext sparkContext = new SparkContext(new SparkConf().setAppName("DataSource").set("spark.driver.allowMultipleContexts","true").setMaster("local"));
   
             SparkSession spark = SparkSession.builder()
-                                .config("spark.executor.memory", "1g")
-                                .config("spark.driver.memory", "4g")
+                                .config("spark.executor.memory", "8g")
+                                .config("spark.driver.memory", "8g")
                                 .master("local[*]").appName("demo")
                                 .getOrCreate();
             
@@ -90,8 +90,8 @@ public class DataSourceService {
 //            SparkContext sparkContext = new SparkContext(new SparkConf().setAppName("DataSource").set("spark.driver.allowMultipleContexts","true").setMaster("local"));
             
             SparkSession spark = SparkSession.builder()
-                                .config("spark.executor.memory", "1g")
-                                .config("spark.driver.memory", "4g")
+                                .config("spark.executor.memory", "8g")
+                                .config("spark.driver.memory", "8g")
                                 .master("local[*]").appName("demo")
                                 .getOrCreate();
             JavaSparkContext javaSparkContext = new JavaSparkContext(spark.sparkContext());
