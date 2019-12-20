@@ -43,8 +43,9 @@ public class DataSourceService {
             configuration.set("fs.default.name", "hdfs://ec2-18-217-53-111.us-east-2.compute.amazonaws.com:8181");
             FileSystem fileSystem = FileSystem.get(configuration);
 //            SparkContext sparkContext = new SparkContext(new SparkConf().setAppName("DataSource").set("spark.driver.allowMultipleContexts","true").setMaster("local"));
-            spark.conf().set("spark.driver.memory", 571859200);
+  
             SparkSession spark = SparkSession.builder().master("local").appName("demo").getOrCreate();
+            spark.conf().set("spark.driver.memory", 571859200);
             JavaSparkContext javaSparkContext = new JavaSparkContext(spark.sparkContext());
 
             FileStatus[] status = fileSystem.listStatus(new Path("/mydata/"));
@@ -83,8 +84,9 @@ public class DataSourceService {
             configuration.set("fs.default.name", "hdfs://ec2-18-217-53-111.us-east-2.compute.amazonaws.com:8181");
             FileSystem fileSystem = FileSystem.get(configuration);
 //            SparkContext sparkContext = new SparkContext(new SparkConf().setAppName("DataSource").set("spark.driver.allowMultipleContexts","true").setMaster("local"));
-            spark.conf().set("spark.driver.memory", 571859200);
+            
             SparkSession spark = SparkSession.builder().master("local").appName("demo").getOrCreate();
+            spark.conf().set("spark.driver.memory", 571859200);
             JavaSparkContext javaSparkContext = new JavaSparkContext(spark.sparkContext());
 
             FileStatus[] status = fileSystem.listStatus(new Path("/mydata/"));
